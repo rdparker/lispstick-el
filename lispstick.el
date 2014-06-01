@@ -44,5 +44,10 @@
   (define-key global-map (kbd "<f12>") 'slime-selector)
   (slime))
 
+;;;###autoload
+(defun lispstick-system-p ()
+  "Return t if LispStick! is running Emacs."
+   (< 0 (string-match "lispstick" (getenv "APPDATA"))))
+
 (provide 'lispstick)
 ;;; lispstick.el ends here
