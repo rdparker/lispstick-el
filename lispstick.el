@@ -48,7 +48,8 @@
 (defun lispstick-system-p ()
   "Return t if LispStick! is running Emacs."
   (let ((appdata (getenv "APPDATA")))
-    (string-match "lispstick" appdata)))
+    (and appdata
+	 (string-match "lispstick" appdata))))
 
 (provide 'lispstick)
 ;;; lispstick.el ends here
