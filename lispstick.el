@@ -47,7 +47,8 @@
 ;;;###autoload
 (defun lispstick-system-p ()
   "Return t if LispStick! is running Emacs."
-   (< 0 (string-match "lispstick" (getenv "APPDATA"))))
+  (let ((appdata (getenv "APPDATA")))
+    (string-match "lispstick" appdata)))
 
 (provide 'lispstick)
 ;;; lispstick.el ends here
